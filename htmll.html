@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Arshi ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    font-family:Arial, sans-serif;
+}
+
+.page{
+    position:relative;
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 50% 55%,
+        #fff 0%,
+        #fff8fc 55%,
+        #ffeaf4 100%);
+}
+
+/* ---------------- FALLING HEARTS ---------------- */
+
+#falling{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:1;
+}
+
+.fall{
+    position:absolute;
+    top:-30px;
+    color:#ef83b2;
+    opacity:.55;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-30px) rotate(0);
+        opacity:0;
+    }
+    10%{opacity:.6;}
+    to{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* ---------------- TITLE ---------------- */
+
+.title{
+    position:absolute;
+    top:5%;
+    left:0;
+    width:100%;
+    text-align:center;
+    z-index:20;
+    animation:titleIn 1s ease;
+}
+
+.title h1{
+    color:#df629a;
+    font-size:clamp(34px,5vw,65px);
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.title .name{
+    display:block;
+    font-size:clamp(30px,4.5vw,54px);
+    color:#d95291;
+    margin-top:2px;
+}
+
+.title p{
+    margin-top:8px;
+    font-size:12px;
+    color:#b9869d;
+}
+
+@keyframes titleIn{
+    from{
+        opacity:0;
+        transform:translateY(-25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ---------------- TREE ---------------- */
+
+.tree-wrap{
+    position:absolute;
+    width:min(720px,78vw);
+    height:min(650px,70vh);
+    left:50%;
+    bottom:-100px;
+    transform:translateX(-50%);
+    z-index:10;
+}
+
+/* SVG fills the entire tree area */
+
+.tree-svg{
+    width:100%;
+    height:100%;
+    overflow:visible;
+}
+
+/* trunk and branches */
+
+.trunk{
+    fill:#80452d;
+}
+
+.branch{
+    fill:none;
+    stroke:#80452d;
+    stroke-width:18;
+    stroke-linecap:round;
+}
+
+/* heart leaves */
+
+.tree-heart{
+    transform-box:fill-box;
+    transform-origin:center;
+    opacity:0;
+    animation:heartGrow .45s ease forwards;
+}
+
+@keyframes heartGrow{
+    0%{
+        opacity:0;
+        transform:scale(0);
+    }
+    70%{
+        opacity:1;
+        transform:scale(1.2);
+    }
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* different heart colours */
+
+.pink{fill:#f078ad;}
+.light{fill:#ffb5d2;}
+.dark{fill:#df5897;}
+.white{
+    fill:#fff;
+    stroke:#ed78ad;
+    stroke-width:1.5;
+}
+
+/* ---------------- MESSAGES ---------------- */
+
+.messages{
+    position:absolute;
+    inset:0;
+    z-index:30;
+    pointer-events:none;
+}
+
+.msg{
+    position:absolute;
+    width:180px;
+    padding:9px 12px;
+
+    background:rgba(255,255,255,.95);
+    border:1px solid #f3cbdc;
+    border-radius:15px;
+
+    color:#9c6b80;
+    text-align:center;
+    font-size:10px;
+    font-weight:bold;
+    line-height:1.35;
+
+    box-shadow:
+        0 5px 18px rgba(220,80,140,.12);
+
+    opacity:0;
+    animation:msgIn .6s ease forwards;
+}
+
+.msg::before{
+    content:"♥ ";
+    color:#e866a3;
+}
+
+.msg1{
+    left:2%;
+    top:34%;
+    animation-delay:3.2s;
+}
+
+.msg2{
+    left:21%;
+    top:25%;
+    animation-delay:3.5s;
+}
+
+.msg3{
+    right:2%;
+    top:34%;
+    animation-delay:3.8s;
+}
+
+.msg4{
+    right:6%;
+    top:46%;
+    animation-delay:4.1s;
+}
+
+.msg5{
+    left:2%;
+    top:49%;
+    animation-delay:4.4s;
+}
+
+.msg6{
+    left:22%;
+    top:43%;
+    animation-delay:4.7s;
+}
+
+.msg7{
+    right:23%;
+    top:51%;
+    animation-delay:5s;
+}
+
+.msg8{
+    right:2%;
+    top:60%;
+    animation-delay:5.3s;
+}
+
+.msg9{
+    left:8%;
+    top:64%;
+    animation-delay:5.6s;
+}
+
+.msg10{
+    left:40%;
+    top:59%;
+    animation-delay:5.9s;
+}
+
+@keyframes msgIn{
+    from{
+        opacity:0;
+        transform:translateY(20px) scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* ---------------- GIFT ---------------- */
+
+.gift-area{
+    position:absolute;
+    left:50%;
+    bottom:12px;
+    transform:translateX(-50%);
+    z-index:100;
+    text-align:center;
+    opacity:0;
+    animation:giftIn .7s ease forwards;
+    animation-delay:6.5s;
+}
+
+.gift-caption{
+    color:#c27898;
+    font-size:10px;
+    margin-bottom:4px;
+}
+
+.gift{
+    position:relative;
+    width:80px;
+    height:65px;
+    cursor:pointer;
+    margin:auto;
+    animation:bounce 1.4s infinite;
+}
+
+.gift-body{
+    position:absolute;
+    left:8px;
+    bottom:0;
+    width:64px;
+    height:43px;
+    border-radius:5px;
+    background:linear-gradient(135deg,#f783b2,#dc5795);
+    box-shadow:0 7px 18px rgba(210,70,135,.25);
+}
+
+.gift-lid{
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:76px;
+    height:18px;
+    border-radius:6px;
+    background:linear-gradient(135deg,#ffa4ca,#e45b99);
+    z-index:4;
+    transition:.5s;
+}
+
+.ribbon-v{
+    position:absolute;
+    left:27px;
+    top:0;
+    width:10px;
+    height:100%;
+    background:#ffe0ec;
+}
+
+.ribbon-h{
+    position:absolute;
+    left:0;
+    top:17px;
+    width:100%;
+    height:8px;
+    background:#ffe0ec;
+}
+
+.bow{
+    position:absolute;
+    left:50%;
+    top:0;
+    width:55px;
+    height:25px;
+    transform:translateX(-50%);
+    z-index:10;
+    transition:.5s;
+}
+
+.bow:before,
+.bow:after{
+    content:"";
+    position:absolute;
+    width:28px;
+    height:19px;
+    background:#ffafd0;
+    border-radius:50%;
+}
+
+.bow:before{
+    left:0;
+    transform:rotate(30deg);
+}
+
+.bow:after{
+    right:0;
+    transform:scaleX(-1) rotate(30deg);
+}
+
+.gift.open .gift-lid{
+    transform:translateY(-30px) rotate(-7deg);
+}
+
+.gift.open .bow{
+    transform:translate(-50%,-30px) rotate(-7deg);
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-7px);}
+}
+
+@keyframes giftIn{
+    from{
+        opacity:0;
+        transform:translateX(-50%) translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(-50%) translateY(0);
+    }
+}
+
+.gift-text{
+    color:#d35c94;
+    font-size:9px;
+    font-weight:bold;
+    margin-top:4px;
+}
+
+/* ---------------- SURPRISE ---------------- */
+
+.surprise{
+    position:fixed;
+    inset:0;
+    z-index:500;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(255,246,251,.96);
+
+    opacity:0;
+    visibility:hidden;
+    transition:.45s;
+}
+
+.surprise.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.surprise-card{
+    position:relative;
+    width:min(450px,90vw);
+    padding:38px 25px;
+    text-align:center;
+
+    background:white;
+    border:2px solid #ffd0e2;
+    border-radius:30px;
+
+    box-shadow:
+        0 25px 80px rgba(215,70,135,.25);
+
+    transform:scale(.5) rotate(-5deg);
+    transition:.5s;
+}
+
+.surprise.show .surprise-card{
+    transform:scale(1) rotate(0);
+}
+
+.close{
+    position:absolute;
+    right:13px;
+    top:12px;
+
+    width:32px;
+    height:32px;
+
+    border:0;
+    border-radius:50%;
+
+    background:#ffe4ef;
+    color:#d45791;
+
+    font-size:22px;
+    cursor:pointer;
+}
+
+.surprise-gift{
+    font-size:65px;
+    animation:surpriseBounce 1s infinite;
+}
+
+.surprise-card h2{
+    color:#db5794;
+    font-size:38px;
+    margin-top:7px;
+}
+
+.surprise-card .hearts{
+    color:#e866a3;
+    letter-spacing:5px;
+    margin:10px 0;
+}
+
+.surprise-card h3{
+    color:#a25f7b;
+    font-size:18px;
+}
+
+.surprise-card p{
+    margin-top:13px;
+    color:#9f788a;
+    font-size:13px;
+    line-height:1.7;
+}
+
+@keyframes surpriseBounce{
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+/* ---------------- CONFETTI ---------------- */
+
+.confetti{
+    position:fixed;
+    width:8px;
+    height:13px;
+    z-index:1000;
+    pointer-events:none;
+    animation:confettiFly 1.5s ease-out forwards;
+}
+
+@keyframes confettiFly{
+    from{
+        transform:translate(0,0) rotate(0);
+        opacity:1;
+    }
+    to{
+        transform:
+            translate(var(--x),var(--y))
+            rotate(720deg);
+        opacity:0;
+    }
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:700px){
+
+    .title{
+        top:4%;
+    }
+
+    .title h1{
+        font-size:30px;
+    }
+
+    .title .name{
+        font-size:27px;
+    }
+
+    .title p{
+        font-size:9px;
+    }
+
+    .tree-wrap{
+        width:560px;
+        height:540px;
+        bottom:-50px;
+    }
+
+    .msg{
+        width:120px;
+        font-size:8px;
+        padding:7px 8px;
+    }
+
+    .msg1{
+        left:0;
+        top:31%;
+    }
+
+    .msg2{
+        left:5%;
+        top:23%;
+    }
+
+    .msg3{
+        right:0;
+        top:31%;
+    }
+
+    .msg4{
+        right:0;
+        top:44%;
+    }
+
+    .msg5{
+        left:0;
+        top:50%;
+    }
+
+    .msg6{
+        left:5%;
+        top:42%;
+    }
+
+    .msg7{
+        right:5%;
+        top:51%;
+    }
+
+    .msg8{
+        right:0;
+        top:59%;
+    }
+
+    .msg9{
+        left:1%;
+        top:65%;
+    }
+
+    .msg10{
+        left:35%;
+        top:59%;
+    }
+
+    .gift{
+        transform:scale(.85);
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+    <div id="falling"></div>
+
+
+    <!-- TITLE -->
+
+    <div class="title">
+        <h1>
+            HAPPY BIRTHDAY
+            <span class="name">ARSHI ❤️</span>
+        </h1>
+
+        <p>
+            A little surprise made just for you ✨
+        </p>
+    </div>
+
+
+    <!-- =====================================================
+         TREE
+    ====================================================== -->
+
+    <div class="tree-wrap">
+
+        <svg
+            class="tree-svg"
+            viewBox="0 0 700 650"
+            preserveAspectRatio="xMidYMid meet"
+        >
+
+            <!-- trunk -->
+
+            <path
+                class="trunk"
+                d="
+                M325 650
+                C325 560 330 480 350 390
+                C370 480 375 560 375 650
+                Z
+                "
+            />
+
+
+            <!-- branches -->
+
+            <path
+                class="branch"
+                d="
+                M350 450
+                C300 400 240 350 145 305
+                "
+            />
+
+            <path
+                class="branch"
+                d="
+                M350 410
+                C310 345 275 285 220 225
+                "
+            />
+
+            <path
+                class="branch"
+                d="
+                M350 485
+                C280 455 205 425 120 410
+                "
+            />
+
+            <path
+                class="branch"
+                d="
+                M350 450
+                C400 400 460 350 555 305
+                "
+            />
+
+            <path
+                class="branch"
+                d="
+                M350 410
+                C390 345 425 285 480 225
+                "
+            />
+
+            <path
+                class="branch"
+                d="
+                M350 485
+                C420 455 495 425 580 410
+                "
+            />
+
+
+            <!-- HEART CROWN -->
+
+            <g id="heartCrown"></g>
+
+        </svg>
+
+    </div>
+
+
+    <!-- =====================================================
+         MESSAGES
+    ====================================================== -->
+
+    <div class="messages">
+
+        <div class="msg msg1">
+            A thousand beautiful moments
+            are waiting for you. 💗
+        </div>
+
+        <div class="msg msg2">
+            May your smile shine brighter
+            every single day. ✨
+        </div>
+
+        <div class="msg msg3">
+            Here's to another beautiful
+            chapter of your life. 🌸
+        </div>
+
+        <div class="msg msg4">
+            May every dream in your heart
+            come true. 💕
+        </div>
+
+        <div class="msg msg5">
+            You deserve so much happiness
+            and love. ❤️
+        </div>
+
+        <div class="msg msg6">
+            May your birthday be
+            wonderful. 🎂
+        </div>
+
+        <div class="msg msg7">
+            May love, laughter and peace
+            follow you everywhere. 💗
+        </div>
+
+        <div class="msg msg8">
+            Keep smiling and keep shining. ✨
+        </div>
+
+        <div class="msg msg9">
+            Sending you lots of love
+            and warm wishes. 💕
+        </div>
+
+        <div class="msg msg10">
+            Happy Birthday Arshi! ❤️
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         GIFT BOX
+    ====================================================== -->
+
+    <div class="gift-area">
+
+        <div class="gift-caption">
+            A little surprise for you 💗
+        </div>
+
+        <div
+            class="gift"
+            id="gift"
+            onclick="openGift()"
+        >
+
+            <div class="gift-body">
+                <div class="ribbon-v"></div>
+                <div class="ribbon-h"></div>
+            </div>
+
+            <div class="gift-lid"></div>
+
+            <div class="bow"></div>
+
+        </div>
+
+        <div class="gift-text">
+            🎁 Click the gift 🎁
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SURPRISE POPUP
+    ====================================================== -->
+
+    <div
+        class="surprise"
+        id="surprise"
+    >
+
+        <div class="surprise-card">
+
+            <button
+                class="close"
+                onclick="closeGift()"
+            >
+                ×
+            </button>
+
+            <div class="surprise-gift">
+                🎁
+            </div>
+
+            <h2>
+                SURPRISE! 💗
+            </h2>
+
+            <div class="hearts">
+                ♥ ♥ ♥ ♥ ♥
+            </div>
+
+            <h3>
+                Happy Birthday, Arshi! 🎂
+            </h3>
+
+            <p>
+                May this new year of your life
+                bring you happiness, laughter,
+                beautiful memories and
+                countless reasons to smile. ✨
+
+                <br><br>
+
+                Keep shining and have
+                the most amazing birthday ever! 💕
+            </p>
+
+            <div class="hearts">
+                💗 💕 💗
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   FALLING HEARTS
+========================================================= */
+
+const falling =
+    document.getElementById("falling");
+
+const symbols = [
+    "♥",
+    "♡",
+    "❤",
+    "💕",
+    "💗"
+];
+
+for(let i=0;i<140;i++){
+
+    const heart =
+        document.createElement("span");
+
+    heart.className="fall";
+
+    heart.textContent =
+        symbols[
+            Math.floor(
+                Math.random()*symbols.length
+            )
+        ];
+
+    heart.style.left =
+        Math.random()*100+"%";
+
+    heart.style.fontSize =
+        (8+Math.random()*17)+"px";
+
+    heart.style.animationDuration =
+        (4+Math.random()*7)+"s";
+
+    heart.style.animationDelay =
+        Math.random()*8+"s";
+
+    falling.appendChild(heart);
+}
+
+
+/* =========================================================
+   HEART TREE
+========================================================= */
+
+const crown =
+    document.getElementById("heartCrown");
+
+
+/*
+   Coordinates are inside the SVG viewBox:
+   0-700 horizontally
+   0-650 vertically
+
+   The coordinates deliberately make a large,
+   dense heart-shaped crown.
+*/
+
+const positions = [
+
+    /* top */
+
+    [350,75],
+
+    [315,88],
+    [385,88],
+
+    [275,105],
+    [350,105],
+    [425,105],
+
+    [235,130],
+    [305,130],
+    [380,130],
+    [455,130],
+
+    /* upper heart */
+
+    [195,165],
+    [265,165],
+    [335,165],
+    [405,165],
+    [475,165],
+
+    [160,205],
+    [225,205],
+    [295,205],
+    [365,205],
+    [435,205],
+    [505,205],
+
+    /* widest */
+
+    [135,250],
+    [195,250],
+    [260,250],
+    [330,250],
+    [400,250],
+    [465,250],
+    [525,250],
+
+    [120,300],
+    [180,300],
+    [245,300],
+    [310,300],
+    [375,300],
+    [440,300],
+    [505,300],
+    [550,300],
+
+    [125,350],
+    [185,350],
+    [250,350],
+    [315,350],
+    [380,350],
+    [445,350],
+    [510,350],
+    [550,350],
+
+    /* lower */
+
+    [145,400],
+    [210,400],
+    [275,400],
+    [340,400],
+    [405,400],
+    [470,400],
+    [525,400],
+
+    [175,450],
+    [240,450],
+    [305,450],
+    [370,450],
+    [435,450],
+    [490,450],
+
+    [215,495],
+    [275,495],
+    [335,495],
+    [395,495],
+    [455,495],
+
+    [260,535],
+    [315,535],
+    [370,535],
+    [425,535],
+
+    [305,570],
+    [350,570],
+    [395,570],
+
+    [335,605],
+    [370,605]
+
+];
+
+
+/* heart SVG path */
+
+function heartPath(x,y,size){
+
+    const s = size;
+
+    return `
+        M ${x} ${y+s*.3}
+
+        C ${x-s*.65} ${y-s*.25},
+          ${x-s*.55} ${y-s*.75},
+          ${x} ${y-s*.35}
+
+        C ${x+s*.55} ${y-s*.75},
+          ${x+s*.65} ${y-s*.25},
+          ${x} ${y+s*.65}
+
+        Z
+    `;
+}
+
+
+/* create hearts */
+
+positions.forEach(
+    (pos,index)=>{
+
+        const heart =
+            document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "path"
+            );
+
+        heart.setAttribute(
+            "d",
+            heartPath(
+                pos[0],
+                pos[1],
+                18 + Math.random()*6
+            )
+        );
+
+        heart.classList.add(
+            "tree-heart"
+        );
+
+
+        /*
+           Different colours
+        */
+
+        if(index % 13 === 0){
+
+            heart.classList.add("white");
+
+        }
+        else if(index % 9 === 0){
+
+            heart.classList.add("dark");
+
+        }
+        else if(index % 6 === 0){
+
+            heart.classList.add("light");
+
+        }
+        else{
+
+            heart.classList.add("pink");
+
+        }
+
+
+        /*
+           Sequential animation
+        */
+
+        heart.style.animationDelay =
+            (1.8 + index*.025)+"s";
+
+
+        crown.appendChild(heart);
+
+    }
+);
+
+
+/* =========================================================
+   GIFT
+========================================================= */
+
+function openGift(){
+
+    const gift =
+        document.getElementById("gift");
+
+    const surprise =
+        document.getElementById("surprise");
+
+    gift.classList.add("open");
+
+    setTimeout(
+        function(){
+
+            surprise.classList.add("show");
+
+            createConfetti();
+
+        },
+        450
+    );
+}
+
+
+function closeGift(){
+
+    const gift =
+        document.getElementById("gift");
+
+    const surprise =
+        document.getElementById("surprise");
+
+    surprise.classList.remove("show");
+
+    setTimeout(
+        function(){
+            gift.classList.remove("open");
+        },
+        400
+    );
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+function createConfetti(){
+
+    const colors=[
+        "#ed69a4",
+        "#ffafd0",
+        "#f58bb8",
+        "#ffd3e4",
+        "#e85b9a"
+    ];
+
+    for(let i=0;i<100;i++){
+
+        const piece =
+            document.createElement("div");
+
+        piece.className="confetti";
+
+        piece.style.left="50%";
+        piece.style.top="50%";
+
+        piece.style.background =
+            colors[
+                Math.floor(
+                    Math.random()*colors.length
+                )
+            ];
+
+        piece.style.setProperty(
+            "--x",
+            ((Math.random()-.5)*900)+"px"
+        );
+
+        piece.style.setProperty(
+            "--y",
+            ((Math.random()-.5)*700)+"px"
+        );
+
+        document.body.appendChild(piece);
+
+        setTimeout(
+            ()=>piece.remove(),
+            1600
+        );
+    }
+}
+
+</script>
+
+</body>
+</html>
